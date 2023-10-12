@@ -1,0 +1,20 @@
+<div>
+    <h2>Fonte de Renda Cadastradas</h2>
+</div>
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fonte of fontesRenda">
+        <td>{{ fonte.id }}</td>
+        <td>{{ fonte.descricao }}</td>
+        <td>{{ fonte.valor | currency:'BRL' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
