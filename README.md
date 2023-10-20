@@ -9,8 +9,11 @@ O frontend da aplicação foi desenvolvido com Angular e o backend foi simulado 
 https://github.com/Alexandrels/educador-financeiro-app/
 
 ## Protótipo
+(WEB)
+https://www.figma.com/file/CzhPPBV95ETLjomj3oyuWH/Educador-Financeiro-App?type=design&node-id=28-515&mode=design
 
-https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80 (EM DEFINICAO)
+(MOBILE)
+https://www.figma.com/file/CzhPPBV95ETLjomj3oyuWH/Educador-Financeiro-App?type=design&node-id=7-3&mode=design
 
 ## Checklist
 
