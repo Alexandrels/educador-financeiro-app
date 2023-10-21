@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~materialize-css/dist/css/materialize.css";
+@import "~material-icons/iconfont/material-icons.css";
+
+
+  body,
+  html {
+    background-color: #000000 !important;
+  }
+  
+  .primary-collor {
+    background-color: #BE63F9; /* Substitua pela cor desejada em formato hexadecimal ou nome de cor. */
+}
+
+.white-input-text {
+  color: white;
+}
