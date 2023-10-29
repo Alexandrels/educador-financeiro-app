@@ -1,0 +1,56 @@
+<app-modal [show]="modal.show" [content]="modal" (closeEvent)="onCloseModal()">
+</app-modal>
+<div>
+  <h4 class="grey-text text-lighten-5">Dashboard</h4>
+</div>
+<div class="row">
+  <div class="col s3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">LAZER</span>
+        <div class="progress">
+          <div class="determinate" style="width: 70%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">CARTÕES CREDITO</span>
+        <div class="progress">
+          <div class="determinate" style="width: 50%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">TRANSPORTE</span>
+        <div class="progress">
+          <div class="determinate" style="width: 90%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">INVESTIMENTOS</span>
+        <div class="progress">
+          <div class="determinate" style="width: 90%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container contact white-text">
+    <h5>TOTAL MINHA RENDA COMPROMETIDA</h5>
+  </div>
+  <app-situacao-saldo
+    #balance
+    [value]="this.value"
+    [valorLancado]="this.valorLancado"
+    (donationEvent)="onRendaComprometidaEvent($event)"
+  ></app-situacao-saldo>
+</div>

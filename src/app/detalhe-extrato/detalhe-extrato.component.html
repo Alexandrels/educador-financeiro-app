@@ -1,0 +1,29 @@
+<div class="container contact white-text">
+  <h5>Transação</h5>
+  <h6>Dados da transação</h6>
+  <hr />
+  <div class="row">
+    <ul class="collection col s12 offset-m3 m6 lista-preta">
+      <li class="collection-item lista-preta">
+        <span class="badge left white-text">IDENTIFICADOR</span>{{ this.transacao.id }}
+      </li>
+      <li class="collection-item lista-preta">
+        <span class="badge left white-text">VALOR</span
+        >{{ this.transacao.valor | currency : "BRL" }}
+      </li>
+      <li class="collection-item lista-preta">
+        <span class="badge left white-text">DESCRICAO</span
+        >{{ this.transacao.descricao | uppercase }}
+      </li>
+
+      <li class="collection-item lista-preta">
+        <span class="badge left white-text">Despesa</span
+        >{{ this.transacao.tipoDespesa.descricao | uppercase }}
+      </li>
+      <li class="collection-item lista-preta">
+        <span class="badge left white-text">DATA</span>
+        {{ this.transacao.dataLancamento | date : "dd/MM/yyyy" }}
+      </li>
+    </ul>
+  </div>
+</div>
