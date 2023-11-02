@@ -14,7 +14,7 @@ import { DetalheExtratoComponent } from './detalhe-extrato/detalhe-extrato.compo
 const routes: Routes = [
   { path: 'inicio', component: LandPageComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'cadastro-usuario', component: CadastroUsuarioComponent },
+  { path: 'a/cadastro-usuario', component: CadastroUsuarioComponent },
   { path: 'cadastro-meta', component: CadastroMetaComponent },
   { path: 'lancar-despesa', component: LancarDespesaComponent },
   { path: 'extrato/detalhes/:id', component: DetalheExtratoComponent },

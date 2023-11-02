@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroFonteRendaComponent } from './cadastro-fonte-renda/cadastro-fonte-renda.component';
 import { VisaoFonteRendaComponent } from './visao-fonte-renda/visao-fonte-renda.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
@@ -21,8 +21,12 @@ import { ExtratoComponent } from './extrato/extrato.component';
 import { VisualizarFontesRendaComponent } from './visualizar-fontes-renda/visualizar-fontes-renda.component';
 import { SituacaoSaldoComponent } from './shared/situacao-saldo/situacao-saldo.component';
 import { ModalComponent } from './modal/modal.component';
-import { DetalheExtratoComponent } from './detalhe-extrato/detalhe-extrato.component'
+import { DetalheExtratoComponent } from './detalhe-extrato/detalhe-extrato.component';
+import { TotalUsuariosComponent } from './cadastro-usuario/total-usuarios/total-usuarios.component'
+import { CpfPipe } from './pipes/cpf.pipe';
+import ptBr from '@angular/common/locales/pt';
 
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -41,7 +45,9 @@ import { DetalheExtratoComponent } from './detalhe-extrato/detalhe-extrato.compo
     VisualizarFontesRendaComponent,
     SituacaoSaldoComponent,
     ModalComponent,
-    DetalheExtratoComponent
+    DetalheExtratoComponent,
+    TotalUsuariosComponent,
+    CpfPipe
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,7 @@ import { DetalheExtratoComponent } from './detalhe-extrato/detalhe-extrato.compo
     FormsModule,
     NgxMaskModule.forRoot(),
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
