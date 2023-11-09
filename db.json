@@ -1,0 +1,11 @@
+{
+    "users": [
+      {
+        "id": "10",
+        "username": "tomaz.leite",
+        "password": "qwerty",
+        "balance": 998.48,
+        "isAdmin": true
+      }
+    ]
+}
