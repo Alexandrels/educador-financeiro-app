@@ -30,7 +30,7 @@ https://www.figma.com/file/CzhPPBV95ETLjomj3oyuWH/Educador-Financeiro-App?type=d
 - [x] Validar campos do formulário com REGEX e apresentar os erros.
 - [x] Desabilitar o botão de submit enquanto o formulário está inválido.
 - [ ] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
-- [ ] Cadastrar uma entidade no JSON Server.
+- [X] Cadastrar uma entidade no JSON Server.
 - [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [x] Usar a diretiva ngIf
 - [ ] Formatar a apresentação de dados com Pipes.
