@@ -1,11 +1,73 @@
 {
-    "users": [
-      {
-        "id": "10",
-        "username": "tomaz.leite",
-        "password": "qwerty",
-        "balance": 998.48,
-        "isAdmin": true
-      }
-    ]
+  "users": [
+    {
+      "id": "10",
+      "username": "tomaz.leite",
+      "password": "qwerty",
+      "balance": 998.48,
+      "isAdmin": true
+    }
+  ],
+  "tipoDespesas": [
+    {
+      "id": "1",
+      "descricao": "LAZER"
+    },
+    {
+      "id": "2",
+      "descricao": "CARTOES CREDITO"
+    },
+    {
+      "id": "3",
+      "descricao": "TRANSPORTE"
+    },
+    {
+      "id": "4",
+      "descricao": "INVESTIMENTOS"
+    }
+  ],
+  "despesas": [
+    {
+      "id": 1,
+      "valor": 2.09,
+      "descricao": "Macarrão",
+      "dataLancamento": "2022-05-21T00:12:50.798Z",
+      "tipoDespesaId": "1"
+    },
+    {
+      "valor": 100,
+      "descricao": "teste",
+      "tipoDespesaId": "1",
+      "id": 364,
+      "dataLancamento": "2023-11-09T18:12:38.855Z"
+    },
+    {
+      "valor": 500,
+      "descricao": "sorvete",
+      "tipoDespesaId": "2",
+      "id": 533,
+      "dataLancamento": "2023-11-09T18:13:20.522Z"
+    },
+    {
+      "valor": 10,
+      "descricao": "Hot Dog",
+      "tipoDespesaId": "1",
+      "id": 138,
+      "dataLancamento": "2023-11-10T01:07:42.553Z"
+    },
+    {
+      "valor": 120,
+      "descricao": "Gula",
+      "tipoDespesaId": "1",
+      "id": 377,
+      "dataLancamento": "2023-11-10T01:08:40.224Z"
+    },
+    {
+      "valor": 123,
+      "descricao": "aaaa",
+      "tipoDespesaId": "1",
+      "id": 482,
+      "dataLancamento": "2023-11-10T01:10:13.836Z"
+    }
+  ]
 }

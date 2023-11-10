@@ -1,13 +1,16 @@
+import { DespesaPromisseService } from '../service/despesa-promisse.service';
 import { User } from './../model/user';
 import { DatePipe } from '@angular/common';
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { SituacaoSaldoComponent } from '../shared/situacao-saldo/situacao-saldo.component';
 import { format } from 'date-fns';
+import { Despesa } from '../model/despesa';
 
 @Component({
   selector: 'app-lancar-despesa',
   templateUrl: './lancar-despesa.component.html',
-  styleUrls: ['./lancar-despesa.component.css']
+  styleUrls: ['./lancar-despesa.component.css'],
+  providers: [DespesaPromisseService],
 })
 export class LancarDespesaComponent implements OnInit{
   valorSaldo: number = 0;
@@ -16,6 +19,10 @@ export class LancarDespesaComponent implements OnInit{
   valorDigitado:number = 0;
   descricao="";
   dataLancada!:string;
+
+  success = false;
+  message = '';
+  submitted = false;
 
   @ViewChild(SituacaoSaldoComponent)
   situacaoSaldoComponent!: SituacaoSaldoComponent;
@@ -26,7 +33,7 @@ export class LancarDespesaComponent implements OnInit{
     text: '',
   };
  
-  constructor(private cdRef: ChangeDetectorRef) {
+  constructor(private cdRef: ChangeDetectorRef, private despesaService: DespesaPromisseService) {
     this.dataLancada= format(new Date(), 'dd/MM/yyyy');
   }
   ngOnInit(): void {
@@ -39,12 +46,25 @@ export class LancarDespesaComponent implements OnInit{
     console.log(`Sua renda esta em R$ ${this.situacaoSaldoComponent.value}`);
   }
 
+  carregarDespesas(){
+    this.despesaService;
+  }
 
 
   onSubmit() {
     console.log("Chegou no submit");
     this.valorLancado = this.valorDigitado;
-    this.limparForm();
+    var despesa = new Despesa(this.valorDigitado,this.descricao,"1")
+    this.despesaService
+        .save(despesa)
+        .then(() => {
+          this.success = true;
+          this.message =
+            'Lançado com sucesso!';
+        })      .finally(() => {
+          console.log('A operação foi finalizada!');
+          this.limparForm();
+        });
     
     
   }
@@ -58,6 +78,10 @@ export class LancarDespesaComponent implements OnInit{
     this.valorDigitado = 0;
     this.dataLancada= format(new Date(), 'dd/MM/yyyy');
 
+  }
+  onSelectChange(event: Event) {
+    let tipoDespesa = (event.target as HTMLInputElement).value;
+    alert(`Tipo despesa será lançada ${tipoDespesa}`);
   }
 
   onRendaComprometidaEvent(event: boolean) {

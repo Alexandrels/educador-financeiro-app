@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroFonteRendaComponent } from './cadastro-fonte-renda/cadastro-fonte-renda.component';
 import { VisaoFonteRendaComponent } from './visao-fonte-renda/visao-fonte-renda.component';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
@@ -53,6 +54,7 @@ registerLocaleData(ptBr);
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    HttpClientModule,
     FormsModule,
     NgxMaskModule.forRoot(),
   ],

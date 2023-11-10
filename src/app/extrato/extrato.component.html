@@ -17,7 +17,7 @@
             <tr *ngFor="let t of this.transacoes" (click)="onClickItem(t)">
               <td>{{ t.dataLancamento | date: "dd/MM/yyyy HH:mm:ss" }}</td>
               <td>{{ t.descricao | uppercase}}</td>
-              <td>{{ t.tipoDespesa.descricao| uppercase }}</td>
+              <td>{{ t.tipoDespesaId| uppercase }}</td>
               <td>{{ t.valor | currency: "BRL" }}</td>
             </tr>
           </tbody>

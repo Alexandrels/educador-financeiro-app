@@ -1,6 +1,7 @@
-import { Transacao } from './../model/transacao';
+
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TipoDespesa } from '../model/tipo-despesa';
 import { Despesa } from '../model/despesa';
 
 @Component({
@@ -9,8 +10,8 @@ import { Despesa } from '../model/despesa';
   styleUrls: ['./detalhe-extrato.component.css']
 })
 export class DetalheExtratoComponent {
-  transacoes: Transacao[] = [];
-  transacao!:Transacao;
+  transacoes: Despesa[] = [];
+  transacao!:Despesa;
 
   ngOnInit(): void {
     this.criarTransacoes();
@@ -33,9 +34,9 @@ export class DetalheExtratoComponent {
       const valor = Math.random() * 1000;
       const descricao = `Descrição ${i + 1}`;
       const descricaoDespesa = `Descrição da despesa ${i + 1}`;
-      const despesa = new Despesa(descricaoDespesa);
+      const despesa = new TipoDespesa(descricaoDespesa);
 
-      const transacao = new Transacao(i,valor,descricao, despesa);
+      const transacao = new Despesa(valor,descricao,"1");
       this.transacoes.push(transacao);
     }
 

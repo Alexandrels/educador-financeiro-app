@@ -1,22 +1,60 @@
+import { TipoDespesaPromisseService } from './../service/tipo-despesa-promisse.service';
 import { Component, OnInit } from '@angular/core';
-import { Transacao } from '../model/transacao';
 import { Despesa } from '../model/despesa';
+import { TipoDespesa } from '../model/tipo-despesa';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DespesaPromisseService } from '../service/despesa-promisse.service';
 
 @Component({
   selector: 'app-extrato',
   templateUrl: './extrato.component.html',
   styleUrls: ['./extrato.component.css'],
+  providers: [DespesaPromisseService, TipoDespesaPromisseService],
 })
 export class ExtratoComponent implements OnInit {
-  transacoes: Transacao[] = [];
+  transacoes!: Despesa[];
+
+  constructor(
+    private router: Router,
+    private despesaService: DespesaPromisseService,
+    private tipoDespesaPromisseService: TipoDespesaPromisseService
+  ) {}
 
   ngOnInit(): void {
-    this.criarTransacoes();
+    // this.criarTransacoes();
+    // this.despesaService.list().then(
+    //   (data) => {
+    //     this.transacoes = data;
+    //   },
+    //   (error) => {
+    //     alert(error);
+    //   }
+    // );
+    this.listaDespesas();
   }
-  constructor(private router: Router) {}
 
-  onClickItem(t: Transacao) {
+  listaDespesas() {
+    this.despesaService.list().then(
+      (data) => {
+        const promises = data.map((despesa) =>
+          this.tipoDespesaPromisseService
+            .get(despesa.tipoDespesaId)
+            .then((tipo) => {
+              despesa.tipoDespesaId = tipo.descricao; // Supondo que o serviço retorne a descrição
+              return despesa;
+            })
+        );
+        Promise.all(promises).then((transacoesComDescricao) => {
+          this.transacoes = transacoesComDescricao;
+        });
+      },
+      (error) => {
+        alert(error);
+      }
+    );
+  }
+
+  onClickItem(t: Despesa) {
     this.router.navigate(['/extrato/detalhes', t?.id]);
     // this.router.navigate(['/extrato/detalhes/', { id: t?.id }]);
   }
@@ -26,9 +64,9 @@ export class ExtratoComponent implements OnInit {
       const valor = Math.random() * 1000;
       const descricao = `Descrição ${i + 1}`;
       const descricaoDespesa = `Descrição da despesa ${i + 1}`;
-      const despesa = new Despesa(descricaoDespesa);
+      const despesa = new TipoDespesa(descricaoDespesa);
 
-      const transacao = new Transacao(i, valor, descricao, despesa);
+      const transacao = new Despesa(valor, descricao, '1');
       this.transacoes.push(transacao);
     }
 

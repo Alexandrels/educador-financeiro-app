@@ -4,6 +4,16 @@
   <h4 class="grey-text text-lighten-5">Lancar despesa</h4>
   <br /><br />
   <div class="row">
+    <div class="col s12">
+      <div
+        class="card-panel white-text"
+        [hidden]="!this.message"
+        [class.red]="!this.success"
+        [class.blue]="this.success"
+      >
+        {{ this.message }}
+      </div>
+    </div>
     <form class="col s12" (submit)="onSubmit()">
       <!-- Event Binding-->
       <div class="row white-text">
@@ -68,7 +78,9 @@
   </div>
   <div color="white">
     <p>
-      ObjetoPreenchido: {{ this.valorLancado }} - {{ this.descricao }}- {{ this.dataLancada }}<!--Interpolation-->
+      ObjetoPreenchido: {{ this.valorLancado }} - {{ this.descricao }}-
+      {{ this.dataLancada
+      }}<!--Interpolation-->
     </p>
   </div>
   <h5>TOTAL MINHA RENDA COMPROMETIDA</h5>
