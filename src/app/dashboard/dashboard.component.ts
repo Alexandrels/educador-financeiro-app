@@ -1,21 +1,22 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { User } from '../model/user';
 import { SituacaoSaldoComponent } from '../shared/situacao-saldo/situacao-saldo.component';
+import { DashboardService } from '../service/dashboard.service';
+import { Dashboard } from '../model/dashboard';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit, AfterViewInit{
+export class DashboardComponent implements OnInit{
   valorSaldo: number = 0;
   valorLancado:number = 0;
   user!: User;
   value: number = 0;
+  dashboards!: Dashboard[];
 
-
-  @ViewChild(SituacaoSaldoComponent)
-  situacaoSaldoComponent!: SituacaoSaldoComponent;
+  constructor(private dashboardService: DashboardService) {}
 
   modal = {
     show: false,
@@ -24,23 +25,16 @@ export class DashboardComponent implements OnInit, AfterViewInit{
   };
 
   ngOnInit(): void {
-
-  }
-  ngAfterViewInit(): void {
-        //demonstração de acesso de um atributo de componente filho por referência
-        console.log(`Sua renda esta em R$ ${this.situacaoSaldoComponent.value}`);
-  }
-
-  onRendaComprometidaEvent(event: boolean) {
-    this.modal.show = event;
-    this.modal.title = 'Aviso!';
-    this.modal.text = `Você já comprometeu mais de 50% da sua renda
-    Tome cuidado com os gastos!`;
+    this.dashboardService.gerarDashboard().subscribe(dashboards => {
+      console.log(dashboards);
+      this.dashboards = dashboards;
+  });
   }
 
   onCloseModal() {
     this.modal.show = false;
   }
+
 
 
 }

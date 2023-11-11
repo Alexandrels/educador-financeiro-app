@@ -68,6 +68,13 @@
       "tipoDespesaId": "1",
       "id": 482,
       "dataLancamento": "2023-11-10T01:10:13.836Z"
+    },
+    {
+      "valor": 100,
+      "descricao": "guloseimas",
+      "tipoDespesaId": "1",
+      "id": 141,
+      "dataLancamento": "2023-11-11T11:35:42.153Z"
     }
   ]
 }

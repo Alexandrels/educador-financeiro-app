@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
 import { User } from '../model/user';
 import { RoutesAPI } from '../util/routes-api';
-import { ErrorUtil } from '../util/error-util';
+import { ErrorUtil } from '../util/ErrorUtil';
 
 @Injectable({
   providedIn: 'root'

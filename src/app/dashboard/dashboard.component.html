@@ -3,54 +3,30 @@
 <div>
   <h4 class="grey-text text-lighten-5">Dashboard</h4>
 </div>
-<div class="row">
-  <div class="col s3">
+<div class="row" *ngIf="dashboards && dashboards!.length > 0">
+  <div class="col s3" *ngFor="let dashboard of dashboards">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">LAZER</span>
+        <span class="card-title">{{ dashboard.descricao }}</span>
         <div class="progress">
-          <div class="determinate" style="width: 70%"></div>
+          <div class="determinate" [style.width.%]="dashboard.percent"></div>
+        </div>
+        <div>
+          <p>{{dashboard.percent | percent}}</p>
         </div>
       </div>
     </div>
   </div>
-  <div class="col s3">
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">CARTÕES CREDITO</span>
-        <div class="progress">
-          <div class="determinate" style="width: 50%"></div>
-        </div>
-      </div>
+
+</div>
+
+<div *ngIf="!dashboards || dashboards!.length == 0" class="container contact white-text"> 
+  <div class="row">
+    <div class="center-align">
+      <i class="col s12 material-icons large texto-branco">mood_bad</i>
+      <span class="col s12 flow-text texto-branco "
+        >Ainda não temos despesas lançadas!</span
+      >
     </div>
   </div>
-  <div class="col s3">
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">TRANSPORTE</span>
-        <div class="progress">
-          <div class="determinate" style="width: 90%"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col s3">
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">INVESTIMENTOS</span>
-        <div class="progress">
-          <div class="determinate" style="width: 90%"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container contact white-text">
-    <h5>TOTAL MINHA RENDA COMPROMETIDA</h5>
-  </div>
-  <app-situacao-saldo
-    #balance
-    [value]="this.value"
-    [valorLancado]="this.valorLancado"
-    (donationEvent)="onRendaComprometidaEvent($event)"
-  ></app-situacao-saldo>
 </div>

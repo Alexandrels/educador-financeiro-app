@@ -1,10 +1,10 @@
 export class TipoDespesa{
 
-    public id: number;
+    public id: string;
     public ativo: boolean;
 
     constructor(public descricao: string) {
-        this.id = Math.round(Math.random() * 1000);
+        this.id = Math.round(Math.random() * 1000).toString();
         this.descricao = descricao;
         this.ativo = true;
 

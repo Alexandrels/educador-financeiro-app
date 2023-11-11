@@ -12,8 +12,7 @@
         <ul class="right hide-on-med-and-down" [hidden]="!this.loggedIn">
           <li><a routerLink="/dashboard" class="flow-text">Dashboard</a></li>
           <li><a routerLink="/lancar-despesa" class="flow-text">Despesas</a></li>
-          <li><a routerLink="/visualizar-fontes-renda" class="flow-text">Fontes-Renda</a></li>
-          <li><a routerLink="/cadastro-fonte-renda" class="flow-text">Cad Fonte Renda</a></li>
+          <li><a routerLink="/cadastro-fonte-renda" class="flow-text">Fonte Renda</a></li>
           <li><a routerLink="/extrato" class="flow-text">Extrato</a></li>
           <li><a class="flow-text" (click)="onLogout()">Sair</a></li>
         </ul>
@@ -35,8 +34,7 @@
     <div *ngIf="this.loggedIn">
       <li><a routerLink="/dashboard" class="flow-text">Dashboard</a></li>
       <li><a routerLink="/lancar-despesa" class="flow-text">Despesas</a></li>
-      <li><a routerLink="/visualizar-fontes-renda" class="flow-text">Fontes-Renda</a></li>
-      <li><a routerLink="/cadastro-fonte-renda" class="flow-text">Cad Fonte Renda</a></li>
+      <li><a routerLink="/cadastro-fonte-renda" class="flow-text">Fonte Renda</a></li>
       <li><a routerLink="/extrato" class="flow-text">Extrato</a></li>
       <li><a class="flow-text" (click)="onLogout()">Sair</a></li>
     </div>

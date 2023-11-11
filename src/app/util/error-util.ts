@@ -1,6 +1,7 @@
-import { AppError } from './app-error';
+
 import { HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
+import { AppError } from './app-error';
 
 export class ErrorUtil {
   public static handleError(error: HttpErrorResponse) {
