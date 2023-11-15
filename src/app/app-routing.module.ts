@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'a/cadastro-usuario', component: CadastroUsuarioComponent },
   { path: 'cadastro-meta', component: CadastroMetaComponent },
-  { path: 'lancar-despesa', component: LancarDespesaComponent },
+  { path: 'lancar-despesa/:id', component: LancarDespesaComponent },
   { path: 'extrato/detalhes/:id', component: DetalheExtratoComponent },
   { path: 'extrato', component: ExtratoComponent },
   { path: 'dashboard', component: DashboardComponent },

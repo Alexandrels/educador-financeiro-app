@@ -6,9 +6,10 @@ import { TipoDespesa } from '../model/tipo-despesa';
 import { ErrorUtil } from '../util/error-util';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TipoDespesaService {
+  URL = RoutesAPI.TIPO_DESPESAS;
 
   constructor(private httpClient: HttpClient) {}
 
@@ -16,15 +17,16 @@ export class TipoDespesaService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-
   getTipoDespesas = (): Observable<TipoDespesa[]> => {
-    // const query: HttpParams = new HttpParams().set('username', username);
-    // const options = username ? { params: query } : {};
-
-    return this.httpClient.get<TipoDespesa[]>(`${RoutesAPI.TIPO_DESPESAS}`).pipe(
-      //map((users: User[])=>users[0]),
-      catchError(ErrorUtil.handleError)
-    );
-    
+    return this.httpClient
+      .get<TipoDespesa[]>(`${this.URL}`)
+      .pipe(
+        //map((users: User[])=>users[0]),
+        catchError(ErrorUtil.handleError)
+      );
   };
+
+  getById(id: string): Observable<TipoDespesa> {
+    return this.httpClient.get<TipoDespesa>(`${this.URL}/${id}`);
+  }
 }

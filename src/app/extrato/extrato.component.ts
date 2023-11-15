@@ -21,15 +21,6 @@ export class ExtratoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.criarTransacoes();
-    // this.despesaService.list().then(
-    //   (data) => {
-    //     this.transacoes = data;
-    //   },
-    //   (error) => {
-    //     alert(error);
-    //   }
-    // );
     this.listaDespesas();
   }
 
@@ -59,17 +50,4 @@ export class ExtratoComponent implements OnInit {
     // this.router.navigate(['/extrato/detalhes/', { id: t?.id }]);
   }
 
-  criarTransacoes() {
-    for (let i = 0; i < 20; i++) {
-      const valor = Math.random() * 1000;
-      const descricao = `Descrição ${i + 1}`;
-      const descricaoDespesa = `Descrição da despesa ${i + 1}`;
-      const despesa = new TipoDespesa(descricaoDespesa);
-
-      const transacao = new Despesa(valor, descricao, '1');
-      this.transacoes.push(transacao);
-    }
-
-    console.log(this.transacoes);
-  }
 }

@@ -10,19 +10,19 @@
   ],
   "tipoDespesas": [
     {
-      "id": "1",
+      "id": "LAZER",
       "descricao": "LAZER"
     },
     {
-      "id": "2",
+      "id": "CARTOES CREDITO",
       "descricao": "CARTOES CREDITO"
     },
     {
-      "id": "3",
+      "id": "TRANSPORTE",
       "descricao": "TRANSPORTE"
     },
     {
-      "id": "4",
+      "id": "INVESTIMENTOS",
       "descricao": "INVESTIMENTOS"
     }
   ],
@@ -32,49 +32,119 @@
       "valor": 2.09,
       "descricao": "Macarrão",
       "dataLancamento": "2022-05-21T00:12:50.798Z",
-      "tipoDespesaId": "1"
+      "tipoDespesaId": "LAZER"
     },
     {
       "valor": 100,
       "descricao": "teste",
-      "tipoDespesaId": "1",
+      "tipoDespesaId": "LAZER",
       "id": 364,
       "dataLancamento": "2023-11-09T18:12:38.855Z"
     },
     {
       "valor": 500,
       "descricao": "sorvete",
-      "tipoDespesaId": "2",
+      "tipoDespesaId": "CARTOES CREDITO",
       "id": 533,
       "dataLancamento": "2023-11-09T18:13:20.522Z"
     },
     {
       "valor": 10,
       "descricao": "Hot Dog",
-      "tipoDespesaId": "1",
+      "tipoDespesaId": "LAZER",
       "id": 138,
       "dataLancamento": "2023-11-10T01:07:42.553Z"
     },
     {
       "valor": 120,
       "descricao": "Gula",
-      "tipoDespesaId": "1",
+      "tipoDespesaId": "LAZER",
       "id": 377,
       "dataLancamento": "2023-11-10T01:08:40.224Z"
     },
     {
       "valor": 123,
       "descricao": "aaaa",
-      "tipoDespesaId": "1",
+      "tipoDespesaId": "LAZER",
       "id": 482,
       "dataLancamento": "2023-11-10T01:10:13.836Z"
     },
     {
       "valor": 100,
       "descricao": "guloseimas",
-      "tipoDespesaId": "1",
+      "tipoDespesaId": "LAZER",
       "id": 141,
       "dataLancamento": "2023-11-11T11:35:42.153Z"
+    },
+    {
+      "valor": 10,
+      "descricao": "futebol ",
+      "tipoDespesaId": "LAZER",
+      "id": 964,
+      "dataLancamento": "2023-11-15T12:35:21.936Z"
+    },
+    {
+      "valor": 1000,
+      "descricao": "Banheira",
+      "tipoDespesaId": "CARTOES CREDITO",
+      "id": 835,
+      "dataLancamento": "2023-11-15T12:36:07.012Z"
+    },
+    {
+      "valor": 20,
+      "descricao": "Trabalho Presencial",
+      "tipoDespesaId": "TRANSPORTE",
+      "id": 168,
+      "dataLancamento": "2023-11-15T12:39:13.155Z"
+    },
+    {
+      "valor": 50,
+      "descricao": "Clube ",
+      "tipoDespesaId": "TRANSPORTE",
+      "id": 126,
+      "dataLancamento": "2023-11-15T12:40:02.343Z"
+    },
+    {
+      "valor": 200,
+      "descricao": "Casa Vó",
+      "tipoDespesaId": "TRANSPORTE",
+      "id": 938,
+      "dataLancamento": "2023-11-15T12:40:47.867Z"
+    },
+    {
+      "valor": 5000,
+      "descricao": "teste 5",
+      "tipoDespesaId": "CARTOES CREDITO",
+      "id": 336,
+      "dataLancamento": "2023-11-15T12:45:30.096Z"
+    },
+    {
+      "valor": 5000,
+      "descricao": "APlicado",
+      "tipoDespesaId": "INVESTIMENTOS",
+      "id": 26,
+      "dataLancamento": "2023-11-15T13:00:30.283Z"
+    },
+    {
+      "valor": 200,
+      "descricao": "Teste 9",
+      "tipoDespesaId": "TRANSPORTE",
+      "id": 789,
+      "dataLancamento": "2023-11-15T13:55:38.506Z"
+    },
+    {
+      "valor": 500,
+      "descricao": "teste 7",
+      "tipoDespesaId": "LAZER",
+      "id": 922,
+      "dataLancamento": "2023-11-15T13:55:52.660Z"
+    },
+    {
+      "valor": 500,
+      "descricao": "Teste 10",
+      "tipoDespesaId": "TRANSPORTE",
+      "id": 866,
+      "dataLancamento": "2023-11-15T13:58:21.119Z"
     }
   ]
 }

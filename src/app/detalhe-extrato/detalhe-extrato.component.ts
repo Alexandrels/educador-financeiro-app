@@ -1,8 +1,10 @@
+import { DespesaService } from './../service/despesa.service';
 
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TipoDespesa } from '../model/tipo-despesa';
 import { Despesa } from '../model/despesa';
+import { TipoDespesaService } from '../service/tipo-despesa.service';
 
 @Component({
   selector: 'app-detalhe-extrato',
@@ -14,33 +16,42 @@ export class DetalheExtratoComponent {
   transacao!:Despesa;
 
   ngOnInit(): void {
-    this.criarTransacoes();
+    // this.criarTransacoes();
     let idParam: number = +this.route.snapshot.paramMap.get('id')!;
 
     this.transacoes = this.transacoes.filter((t) => {
       return t.id === idParam;
     });
-
-    if (this.transacoes.length == 0) {
-      alert('Oppsss! A transação não foi encontrada!');
-    }
-    this.transacao = this.transacoes[0];
+    this.carregarDetalheExtrao(idParam);
 
   }
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private despesaService: DespesaService, private tipoDespesaService: TipoDespesaService) {}
 
-  criarTransacoes() {
-    for (let i = 0; i < 20; i++) {
-      const valor = Math.random() * 1000;
-      const descricao = `Descrição ${i + 1}`;
-      const descricaoDespesa = `Descrição da despesa ${i + 1}`;
-      const despesa = new TipoDespesa(descricaoDespesa);
-
-      const transacao = new Despesa(valor,descricao,"1");
-      this.transacoes.push(transacao);
-    }
-
-    console.log(this.transacoes);
+  carregarDetalheExtrao(id: number){
+    this.despesaService.getById(id).subscribe(
+      (data: Despesa) =>{
+        if (!data ) {
+          alert('Nenhum resultado foi encontrado!');
+        }
+        this.transacao = data;
+        this.tipoDespesaService.getById(data.tipoDespesaId).subscribe(
+          (tipo: TipoDespesa)=>{
+            if (tipo ) {
+              this.transacao.tipoDespesaId = tipo.descricao;
+            }
+          },
+          (error)=>{
+            console.log('nao conseguiu desc tipo despesa');
+            console.log(error);
+          }
+        )
+      },
+      (error) => {
+        console.log('componente');
+        console.log(error);
+        alert(error.message);
+      }
+    );
   }
 
 }

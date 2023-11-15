@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { User } from '../model/user';
-import { SituacaoSaldoComponent } from '../shared/situacao-saldo/situacao-saldo.component';
 import { DashboardService } from '../service/dashboard.service';
 import { Dashboard } from '../model/dashboard';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit{
   value: number = 0;
   dashboards!: Dashboard[];
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private router: Router,private dashboardService: DashboardService) {}
 
   modal = {
     show: false,
@@ -31,8 +31,26 @@ export class DashboardComponent implements OnInit{
   });
   }
 
+
+  onClickItem(t: Dashboard) {
+    this.router.navigate(['/lancar-despesa', t?.descricao]);
+    // this.router.navigate(['/extrato/detalhes/', { id: t?.id }]);
+  }
+
   onCloseModal() {
     this.modal.show = false;
+  }
+
+  getColor(percent: number): string {
+    if(percent > 0.60){
+      return 'red';
+
+    }else if(percent > 0.45){
+      return 'orange';
+    }else{
+      return 'green';
+    }
+
   }
 
 

@@ -9,22 +9,29 @@ import { ErrorUtil } from '../util/error-util';
   providedIn: 'root'
 })
 export class DespesaService {
-
-  constructor(private httpClient: HttpClient) {}
-
+  URL = RoutesAPI.DESPESAS;
+  
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
-
+  
+  constructor(private httpClient: HttpClient) {}
 
   getDespesas = (): Observable<Despesa[]> => {
     // const query: HttpParams = new HttpParams().set('username', username);
     // const options = username ? { params: query } : {};
 
-    return this.httpClient.get<Despesa[]>(`${RoutesAPI.DESPESAS}`).pipe(
+    return this.httpClient.get<Despesa[]>(`${this.URL}`).pipe(
       //map((users: User[])=>users[0]),
       catchError(ErrorUtil.handleError)
     );
     
   };
+
+  getById(id: number): Observable<Despesa> {
+    return this.httpClient.get<Despesa>(`${this.URL}/${id}`);
+  }
+
+
+  
 }

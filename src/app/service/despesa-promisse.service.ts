@@ -34,22 +34,6 @@ export class DespesaPromisseService {
     return result;
   }
 
-  // patch(transaction: Despesa): Promise<Despesa> {
-  //   return this.httpClient
-  //     .patch<Despesa>(
-  //       this.URL,
-  //       JSON.stringify(transaction),
-  //       this.httpOptions
-  //     )
-  //     .toPromise();
-  // }
-
-  // update(transaction: Despesa): Promise<Despesa> {
-  //   return this.httpClient
-  //     .put<Despesa>(this.URL, JSON.stringify(transaction), this.httpOptions)
-  //     .toPromise();
-  // }
-
   async list(): Promise<Despesa[]> {
     const result = await firstValueFrom(this.httpClient
       .get<Despesa[]>(
