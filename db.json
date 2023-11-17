@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": "10",
+      "username": "ale.leite",
+      "password": "qwerty",
+      "balance": 4000,
+      "isAdmin": true
+    }
+  ],
+  "tipoDespesas": [
+    {
+      "id": "LAZER",
+      "descricao": "LAZER"
+    },
+    {
+      "id": "CARTOES CREDITO",
+      "descricao": "CARTOES CREDITO"
+    },
+    {
+      "id": "TRANSPORTE",
+      "descricao": "TRANSPORTE"
+    },
+    {
+      "id": "INVESTIMENTOS",
+      "descricao": "INVESTIMENTOS"
+    }
+  ],
+  "despesas": [
+    {
+      "id": 1,
+      "valor": 2.09,
+      "descricao": "Macarrão",
+      "dataLancamento": "2022-05-21T00:12:50.798Z",
+      "tipoDespesaId": "LAZER"
+    },
+    {
+      "valor": 100,
+      "descricao": "teste",
+      "tipoDespesaId": "LAZER",
+      "id": 364,
+      "dataLancamento": "2023-11-09T18:12:38.855Z"
+    }
+  ]
+}
