@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href=/educador-financeiro-app/",
+    "ghpages": "angular-cli-ghpages --dir=dist/educador-financeiro-app --repo=https://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@github.com/Alexandrels/educador-financeiro-app.git --name='alexandreleite' --email=alexandrels800@gmail.com",
+    "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "json:server": "json-server --watch db.json",
