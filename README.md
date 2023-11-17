@@ -6,7 +6,7 @@ O frontend da aplicação foi desenvolvido com Angular e o backend foi simulado 
 
 ## Endereço de Deploy - GitHub Pages
 
-https://github.com/Alexandrels/educador-financeiro-app/
+https://alexandrels.github.io/educador-financeiro-app/dashboard
 
 ## Protótipo
 (WEB)
@@ -34,7 +34,7 @@ https://www.figma.com/file/CzhPPBV95ETLjomj3oyuWH/Educador-Financeiro-App?type=d
 - [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [x] Usar a diretiva ngIf
 - [X] Formatar a apresentação de dados com Pipes.
-- [ ] Build e deploy da aplicação.
+- [X] Build e deploy da aplicação.
 
 ## Manual de execução
 - Clonar o repositório com `git clone`
