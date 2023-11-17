@@ -4,7 +4,7 @@
       "id": "10",
       "username": "ale.leite",
       "password": "qwerty",
-      "balance": 4000,
+      "balance": 3800,
       "isAdmin": true
     }
   ],
@@ -40,6 +40,83 @@
       "tipoDespesaId": "LAZER",
       "id": 364,
       "dataLancamento": "2023-11-09T18:12:38.855Z"
+    },
+    {
+      "valor": 1000,
+      "descricao": "comer lanche",
+      "tipoDespesaId": "CARTOES CREDITO",
+      "id": 17,
+      "dataLancamento": "2023-11-17T19:43:03.551Z"
+    },
+    {
+      "valor": 500,
+      "descricao": "teste",
+      "tipoDespesaId": "CARTOES CREDITO",
+      "id": 570,
+      "dataLancamento": "2023-11-17T19:43:34.587Z"
+    },
+    {
+      "valor": 20,
+      "descricao": "ir na tia",
+      "tipoDespesaId": "TRANSPORTE",
+      "id": 882,
+      "dataLancamento": "2023-11-17T19:53:18.008Z"
+    },
+    {
+      "valor": 1000,
+      "descricao": "aaa",
+      "tipoDespesaId": "TRANSPORTE",
+      "id": 401,
+      "dataLancamento": "2023-11-17T19:53:38.627Z"
+    },
+    {
+      "valor": 10,
+      "descricao": "aaaa",
+      "tipoDespesaId": "CARTOES CREDITO",
+      "id": 358,
+      "dataLancamento": "2023-11-17T20:22:36.162Z"
+    },
+    {
+      "valor": 5000,
+      "descricao": "teste",
+      "tipoDespesaId": "INVESTIMENTOS",
+      "id": 460,
+      "dataLancamento": "2023-11-17T20:26:32.829Z"
+    },
+    {
+      "valor": 150,
+      "descricao": "aaaa",
+      "tipoDespesaId": "INVESTIMENTOS",
+      "id": 869,
+      "dataLancamento": "2023-11-17T20:36:58.246Z"
+    },
+    {
+      "valor": 1500,
+      "descricao": "hghgh",
+      "tipoDespesaId": "INVESTIMENTOS",
+      "id": 127,
+      "dataLancamento": "2023-11-17T20:37:13.113Z"
+    },
+    {
+      "valor": 5000,
+      "descricao": "teste",
+      "tipoDespesaId": "LAZER",
+      "id": 814,
+      "dataLancamento": "2023-11-17T21:16:57.242Z"
+    },
+    {
+      "valor": 6000,
+      "descricao": "bbbb",
+      "tipoDespesaId": "LAZER",
+      "id": 191,
+      "dataLancamento": "2023-11-17T21:17:45.043Z"
+    },
+    {
+      "valor": 200,
+      "descricao": "entidade json nova",
+      "tipoDespesaId": "TRANSPORTE",
+      "id": 807,
+      "dataLancamento": "2023-11-17T21:38:09.648Z"
     }
   ]
 }
