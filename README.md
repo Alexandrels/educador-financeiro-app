@@ -53,3 +53,15 @@ https://www.figma.com/file/CzhPPBV95ETLjomj3oyuWH/Educador-Financeiro-App?type=d
   - Por padrão, a aplicação JSON Server executa no endereço `localhost:3000`    
 - Abrir um novo terminal pelo VSCode e então executar o projeto Angular
   - Comando: `ng s -o`
+
+## Dicas
+- Após baixar na maquina verificar se tem o node `node --version`
+- Instalar o cli angular `npm i -g @angular/cli`
+- rodar o projeto com  banco mock
+  - pode ser pelo scrip no `packaje.json` selecionando 
+    - primeiro `json:server` ou `json:server:routes`
+    - segundo  `start`
+
+- rodar o projeto com os mesmo comandos acima mas por linha decomando
+  - primeiro `npm run json:server:routes`
+  - segundo `npm run start`

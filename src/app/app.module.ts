@@ -26,6 +26,8 @@ import { DetalheExtratoComponent } from './detalhe-extrato/detalhe-extrato.compo
 import { TotalUsuariosComponent } from './cadastro-usuario/total-usuarios/total-usuarios.component'
 import { CpfPipe } from './pipes/cpf.pipe';
 import ptBr from '@angular/common/locales/pt';
+import {AngularFireModule} from '@angular/fire/compat';
+import { environment } from './environments/environment';
 
 registerLocaleData(ptBr);
 
@@ -52,11 +54,13 @@ registerLocaleData(ptBr);
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
     FormsModule,
     NgxMaskModule.forRoot(),
+    
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
