@@ -28,6 +28,11 @@ import { CpfPipe } from './pipes/cpf.pipe';
 import ptBr from '@angular/common/locales/pt';
 import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from './environments/environment';
+import { CadastroFonteRendaListComponent } from './cadastro-fonte-renda-list/cadastro-fonte-renda-list.component';
+import { CadastroFonteRendaDetalheComponent } from './cadastro-fonte-renda-detalhe/cadastro-fonte-renda-detalhe.component';
+import { CadastroTipoDespesaComponent } from './cadastro-tipo-despesa/cadastro-tipo-despesa.component';
+import { DetalheTipoDespesaComponent } from './detalhe-tipo-despesa/detalhe-tipo-despesa.component';
+import { ListarTipoDespesaComponent } from './listar-tipo-despesa/listar-tipo-despesa.component';
 
 registerLocaleData(ptBr);
 
@@ -50,7 +55,12 @@ registerLocaleData(ptBr);
     ModalComponent,
     DetalheExtratoComponent,
     TotalUsuariosComponent,
-    CpfPipe
+    CpfPipe,
+    CadastroFonteRendaListComponent,
+    CadastroFonteRendaDetalheComponent,
+    CadastroTipoDespesaComponent,
+    DetalheTipoDespesaComponent,
+    ListarTipoDespesaComponent
   ],
   imports: [
     BrowserModule,

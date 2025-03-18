@@ -29,42 +29,43 @@ export class DashboardService {
   //     catchError(ErrorUtil.handleError)
   //   );
   // }
-  getDespesas = (): Observable<Despesa[]> => {
-    return this.despesaService.getDespesas();
-  };
 
-  getTipoDespesas = (): Observable<TipoDespesa[]> => {
-    return this.tipoDespesaService.getTipoDespesas();
-  };
-  gerarDashboard = (): Observable<Dashboard[]> => {
-    return forkJoin({
-      despesas: this.getDespesas(),
-      tipoDespesas: this.getTipoDespesas(),
-    }).pipe(
-      map(({ despesas, tipoDespesas }) => {
-        const dashboardMap = new Map<string, number>();
+  // getDespesas = (): Observable<Despesa[]> => {
+  //   return this.despesaService.getDespesas();
+  // };
 
-        // Inicializar o mapa com valores zerados para cada tipo de despesa
-        tipoDespesas.forEach((tipo) => {
-          dashboardMap.set(tipo.id, 0);
-        });
+  // getTipoDespesas = (): Observable<TipoDespesa[]> => {
+  //   return this.tipoDespesaService.getTipoDespesas();
+  // };
+  // gerarDashboard = (): Observable<Dashboard[]> => {
+  //   return forkJoin({
+  //     despesas: this.getDespesas(),
+  //     tipoDespesas: this.getTipoDespesas(),
+  //   }).pipe(
+  //     map(({ despesas, tipoDespesas }) => {
+  //       const dashboardMap = new Map<string, number>();
 
-        // Somar os valores de despesas para cada tipo
-        despesas.forEach((despesa) => {
-          const valorAtual = dashboardMap.get(despesa.tipoDespesaId) || 0;
-          dashboardMap.set(despesa.tipoDespesaId, valorAtual + despesa.valor);
-        });
+  //       // Inicializar o mapa com valores zerados para cada tipo de despesa
+  //       tipoDespesas.forEach((tipo) => {
+  //         dashboardMap.set(tipo.id, 0);
+  //       });
 
-        // Criar instâncias de Dashboard com os totais
-        const dashboards: Dashboard[] = [];
-        tipoDespesas.forEach((tipo) => {
-          const total = dashboardMap.get(tipo.id) || 0;
-          const dashboard = new Dashboard(tipo.descricao, total);
-          dashboards.push(dashboard);
-        });
+  //       // Somar os valores de despesas para cada tipo
+  //       despesas.forEach((despesa) => {
+  //         const valorAtual = dashboardMap.get(despesa.tipoDespesaId) || 0;
+  //         dashboardMap.set(despesa.tipoDespesaId, valorAtual + despesa.valor);
+  //       });
 
-        return dashboards;
-      })
-    );
-  };
+  //       // Criar instâncias de Dashboard com os totais
+  //       const dashboards: Dashboard[] = [];
+  //       tipoDespesas.forEach((tipo) => {
+  //         const total = dashboardMap.get(tipo.id) || 0;
+  //         const dashboard = new Dashboard(tipo.descricao, total);
+  //         dashboards.push(dashboard);
+  //       });
+
+  //       return dashboards;
+  //     })
+  //   );
+  // };
 }

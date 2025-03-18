@@ -1,0 +1,59 @@
+<div *ngIf="fonteRendaAtual" class="edit-form">
+    <h4>tipoDespesa</h4>
+    <form>
+      <div class="form-group white-text">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="fonteRendaAtual.descricao"
+          name="title"
+        />
+      </div>
+      <div class="form-group white-text">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="fonteRendaAtual.descricao"
+          name="description"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ fonteRendaAtual.published ? "Published" : "Pending" }}
+      </div>
+    </form>
+  
+    <button
+      class="badge badge-primary mr-2"
+      *ngIf="fonteRendaAtual.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+      *ngIf="!fonteRendaAtual.published"
+      class="badge badge-primary mr-2"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button>
+  
+    <button class="badge badge-danger mr-2" (click)="deletetipoDespesa()">
+      Delete
+    </button>
+  
+    <button type="submit" class="badge badge-success" (click)="updatetipoDespesa()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  
+  <div *ngIf="!fonteRendaAtual">
+    <br />
+    <p>Cannot access this tipoDespesa...</p>
+  </div>

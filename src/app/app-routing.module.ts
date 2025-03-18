@@ -10,6 +10,9 @@ import { LancarDespesaComponent } from './lancar-despesa/lancar-despesa.componen
 import { ExtratoComponent } from './extrato/extrato.component';
 import { VisualizarFontesRendaComponent } from './visualizar-fontes-renda/visualizar-fontes-renda.component';
 import { DetalheExtratoComponent } from './detalhe-extrato/detalhe-extrato.component';
+import { CadastroFonteRendaListComponent } from './cadastro-fonte-renda-list/cadastro-fonte-renda-list.component';
+import { CadastroTipoDespesaComponent } from './cadastro-tipo-despesa/cadastro-tipo-despesa.component';
+import { ListarTipoDespesaComponent } from './listar-tipo-despesa/listar-tipo-despesa.component';
 
 const routes: Routes = [
   { path: 'inicio', component: LandPageComponent },
@@ -21,7 +24,10 @@ const routes: Routes = [
   { path: 'extrato', component: ExtratoComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'cadastro-fonte-renda', component: CadastroFonteRendaComponent },
+  { path: 'lista-fonte-renda', component: CadastroFonteRendaListComponent },
   { path: 'visualizar-fontes-renda', component: VisualizarFontesRendaComponent },
+  { path: 'cad-tipo-despesa', component: CadastroTipoDespesaComponent },
+  { path: 'listar-tipo-despesa', component: ListarTipoDespesaComponent },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
 ];
 

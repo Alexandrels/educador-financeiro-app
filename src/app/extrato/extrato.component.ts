@@ -21,29 +21,29 @@ export class ExtratoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.listaDespesas();
+    // this.listaDespesas();
   }
 
-  listaDespesas() {
-    this.despesaService.list().then(
-      (data) => {
-        const promises = data.map((despesa) =>
-          this.tipoDespesaPromisseService
-            .get(despesa.tipoDespesaId)
-            .then((tipo) => {
-              despesa.tipoDespesaId = tipo.descricao; // Supondo que o serviço retorne a descrição
-              return despesa;
-            })
-        );
-        Promise.all(promises).then((transacoesComDescricao) => {
-          this.transacoes = transacoesComDescricao;
-        });
-      },
-      (error) => {
-        alert(error);
-      }
-    );
-  }
+  // listaDespesas() {
+  //   this.despesaService.list().then(
+  //     (data) => {
+  //       const promises = data.map((despesa) =>
+  //         this.tipoDespesaPromisseService
+  //           .get(despesa.tipoDespesaId)
+  //           .then((tipo) => {
+  //             despesa.tipoDespesaId = tipo.descricao; // Supondo que o serviço retorne a descrição
+  //             return despesa;
+  //           })
+  //       );
+  //       Promise.all(promises).then((transacoesComDescricao) => {
+  //         this.transacoes = transacoesComDescricao;
+  //       });
+  //     },
+  //     (error) => {
+  //       alert(error);
+  //     }
+  //   );
+  // }
 
   onClickItem(t: Despesa) {
     this.router.navigate(['/extrato/detalhes', t?.id]);

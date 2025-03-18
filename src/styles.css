@@ -15,3 +15,8 @@
 .white-input-text {
   color: white;
 }
+
+* {
+  color: white !important;
+}
+

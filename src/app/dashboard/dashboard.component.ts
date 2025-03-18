@@ -25,10 +25,10 @@ export class DashboardComponent implements OnInit{
   };
 
   ngOnInit(): void {
-    this.dashboardService.gerarDashboard().subscribe(dashboards => {
-      console.log(dashboards);
-      this.dashboards = dashboards;
-  });
+  //   this.dashboardService.gerarDashboard().subscribe(dashboards => {
+  //     console.log(dashboards);
+  //     this.dashboards = dashboards;
+  // });
   }
 
 

@@ -1,0 +1,29 @@
+<div class="list row">
+    <div class="col-md-6">
+      <h4>Tipos Despesas</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let tipoDespesa of tipoDespesaList; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveTutorial(tipoDespesa, i)"
+        >
+          {{ tipoDespesa.descricao }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="tipoDespesaAtual">
+        <app-detalhe-tipo-despesa
+          (refreshList)="refreshList()"
+          [tipoDespesa]="tipoDespesaAtual"
+        ></app-detalhe-tipo-despesa>
+      </div>
+  
+      <div *ngIf="!tipoDespesaAtual">
+        <br />
+        <p>Clique em um Tipo Despesa...</p>
+      </div>
+    </div>
+  </div>
+  

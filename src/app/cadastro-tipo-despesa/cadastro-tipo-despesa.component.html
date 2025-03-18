@@ -1,0 +1,22 @@
+<div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Tipo Despesa</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="tipoDespesa.descricao"
+          name="title"
+        />
+      </div>
+  
+      <button (click)="savetipoDespesa()" class="btn btn-success">Submit</button>
+    </div>
+  
+    <div *ngIf="submitted">
+      <h4>SALVO COM SUCESSO!</h4>
+      <button class="btn btn-success" (click)="newTipoDespesa()">Add</button>
+    </div>
+  </div>

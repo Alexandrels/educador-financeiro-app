@@ -1,0 +1,30 @@
+<div class="list row">
+    <div class="col-md-6 white-text">
+      <h4>Lista de Fones de Renda</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item white-text"
+          *ngFor="let fonteRenda of fonteRendaList; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActivetipoDespesa(fonteRenda, i)"
+        >
+          {{ fonteRenda.descricao }}
+          {{ fonteRenda.valor }}
+        </li>
+        
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="fonteRendaAtual">
+        <app-cadastro-fonte-renda-detalhe
+          (refreshList)="refreshList()"
+          [fonteRenda]="fonteRendaAtual"
+        ></app-cadastro-fonte-renda-detalhe>
+      </div>
+  
+      <div *ngIf="!fonteRendaAtual">
+        <br />
+        <p>Clique em uma fonte de renda...</p>
+      </div>
+    </div>
+  </div>

@@ -28,30 +28,30 @@ export class DetalheExtratoComponent {
   constructor(private route: ActivatedRoute, private despesaService: DespesaService, private tipoDespesaService: TipoDespesaService) {}
 
   carregarDetalheExtrao(id: number){
-    this.despesaService.getById(id).subscribe(
-      (data: Despesa) =>{
-        if (!data ) {
-          alert('Nenhum resultado foi encontrado!');
-        }
-        this.transacao = data;
-        this.tipoDespesaService.getById(data.tipoDespesaId).subscribe(
-          (tipo: TipoDespesa)=>{
-            if (tipo ) {
-              this.transacao.tipoDespesaId = tipo.descricao;
-            }
-          },
-          (error)=>{
-            console.log('nao conseguiu desc tipo despesa');
-            console.log(error);
-          }
-        )
-      },
-      (error) => {
-        console.log('componente');
-        console.log(error);
-        alert(error.message);
-      }
-    );
+    // this.despesaService.getById(id).subscribe(
+    //   (data: Despesa) =>{
+    //     if (!data ) {
+    //       alert('Nenhum resultado foi encontrado!');
+    //     }
+    //     this.transacao = data;
+    //     this.tipoDespesaService.getById(data.tipoDespesaId).subscribe(
+    //       (tipo: TipoDespesa)=>{
+    //         if (tipo ) {
+    //           this.transacao.tipoDespesaId = tipo.descricao;
+    //         }
+    //       },
+    //       (error)=>{
+    //         console.log('nao conseguiu desc tipo despesa');
+    //         console.log(error);
+    //       }
+    //     )
+    //   },
+    //   (error) => {
+    //     console.log('componente');
+    //     console.log(error);
+    //     alert(error.message);
+    //   }
+    // );
   }
 
 }
