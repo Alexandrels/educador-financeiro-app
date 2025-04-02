@@ -12,3 +12,7 @@
     border-left: 5px solid #42a948;
   }
   
+/* Estiliza os itens do dropdown gerado pelo Materialize */
+.dropdown-content li > span {
+  color: black !important;
+}
