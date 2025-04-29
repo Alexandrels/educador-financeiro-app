@@ -14,7 +14,7 @@
         {{ this.message }}
       </div>
     </div>
-    <form class="col s12" (submit)="onSubmit()">
+    <form class="col s12" (submit)="saveDespesa()">
       <!-- Event Binding-->
       <div class="row white-text">
         <div class="input-field col s12">
@@ -22,7 +22,7 @@
             id="input-descricao"
             name="input-descricao"
             type="text"
-            [(ngModel)]="this.descricao"
+            [(ngModel)]="this.despesa.descricao"
             required
             class="white-input-text"
           /><!-- Two Way Data Binding-->
@@ -65,6 +65,18 @@
           </label>
         </div>
       </div>
+      <div class="row white-text">
+        <div class="input-field col s12">
+          <select id="tipo-despesa" name="tipo-despesa" [(ngModel)]="despesa.tipoDespesa" required>
+            <option value="" disabled selected>Selecione o tipo de despesa</option>
+            <option *ngFor="let tipo of tipoDespesaList" [ngValue]="tipo">
+              {{ tipo.descricao }}
+            </option>
+          </select>
+          <label for="tipo-despesa" class="active white-text">Tipo de Despesa</label>
+        </div>
+      </div>
+      
       <button
         class="btn waves-effect waves-light primary-collor darken-4"
         type="submit"
@@ -78,16 +90,16 @@
   </div>
   <div color="white">
     <p>
-      ObjetoPreenchido: {{ this.valorLancado }} - {{ this.descricao }}-
+      ObjetoPreenchido: {{ this.valorLancado }} - {{ this.despesa.descricao }}-
       {{ this.dataLancada
       }}<!--Interpolation-->
     </p>
   </div>
   <h5>TOTAL MINHA RENDA COMPROMETIDA</h5>
-  <app-situacao-saldo
+  <!--<app-situacao-saldo
     #balance
     [value]="this.valorSaldo"
     [valorLancado]="this.valorLancado"
     (rendaComprometidaEvent)="onRendaComprometidaEvent($event)"
-  ></app-situacao-saldo>
+  ></app-situacao-saldo>-->
 </div>

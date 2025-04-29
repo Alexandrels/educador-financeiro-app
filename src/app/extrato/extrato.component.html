@@ -14,7 +14,9 @@
           </thead>
   
           <tbody>
-            <tr *ngFor="let t of this.transacoes" (click)="onClickItem(t)">
+            <tr *ngFor="let t of this.despesaList; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveTutorial(t, i)">
               <td>{{ t.dataLancamento | date: "dd/MM/yyyy HH:mm:ss" }}</td>
               <td>{{ t.descricao | uppercase}}</td>
               <td>{{ t.tipoDespesaId| uppercase }}</td>
@@ -24,5 +26,9 @@
         </table>
       </div>
     </div>
+    <div *ngIf="!despesaAtual">
+      <br />
+      <p>Por favor clique em uma despesa...</p>
+  </div>
   </div>
   

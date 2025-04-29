@@ -16,7 +16,10 @@
   color: white;
 }
 
-* {
+/* * {
   color: white !important;
-}
+} */
 
+::ng-deep select option {
+  color: black !important;
+}

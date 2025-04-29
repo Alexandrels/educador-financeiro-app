@@ -33,6 +33,8 @@ import { CadastroFonteRendaDetalheComponent } from './cadastro-fonte-renda-detal
 import { CadastroTipoDespesaComponent } from './cadastro-tipo-despesa/cadastro-tipo-despesa.component';
 import { DetalheTipoDespesaComponent } from './detalhe-tipo-despesa/detalhe-tipo-despesa.component';
 import { ListarTipoDespesaComponent } from './listar-tipo-despesa/listar-tipo-despesa.component';
+import { DespesaDetalheComponent } from './despesa-detalhe/despesa-detalhe.component';
+import { DespesaListComponent } from './despesa-list/despesa-list.component';
 
 registerLocaleData(ptBr);
 
@@ -60,7 +62,9 @@ registerLocaleData(ptBr);
     CadastroFonteRendaDetalheComponent,
     CadastroTipoDespesaComponent,
     DetalheTipoDespesaComponent,
-    ListarTipoDespesaComponent
+    ListarTipoDespesaComponent,
+    DespesaDetalheComponent,
+    DespesaListComponent
   ],
   imports: [
     BrowserModule,

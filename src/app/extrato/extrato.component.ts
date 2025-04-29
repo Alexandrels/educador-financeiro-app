@@ -4,6 +4,8 @@ import { Despesa } from '../model/despesa';
 import { TipoDespesa } from '../model/tipo-despesa';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DespesaPromisseService } from '../service/despesa-promisse.service';
+import { DespesaService } from '../service/despesa.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-extrato',
@@ -12,16 +14,47 @@ import { DespesaPromisseService } from '../service/despesa-promisse.service';
   providers: [DespesaPromisseService, TipoDespesaPromisseService],
 })
 export class ExtratoComponent implements OnInit {
-  transacoes!: Despesa[];
+  // transacoes!: Despesa[];
 
-  constructor(
-    private router: Router,
-    private despesaService: DespesaPromisseService,
-    private tipoDespesaPromisseService: TipoDespesaPromisseService
-  ) {}
+  despesaList?: Despesa[];
+  despesaAtual?: Despesa;
+  currentIndex = -1;
+  title = '';
+
+  // constructor(
+  //   private router: Router,
+  //   private despesaService: DespesaPromisseService,
+  //   private tipoDespesaPromisseService: TipoDespesaPromisseService
+  // ) {}
+
+  constructor(private despesaService: DespesaService) { }
 
   ngOnInit(): void {
     // this.listaDespesas();
+    this.retrieveTutorials();
+  }
+
+  refreshList(): void {
+    this.despesaAtual = undefined;
+    this.currentIndex = -1;
+    this.retrieveTutorials();
+  }
+
+  retrieveTutorials(): void {
+    this.despesaService.getAll().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.despesaList = data;
+    });
+  }
+
+  setActiveTutorial(despesa: Despesa, index: number): void {
+    this.despesaAtual = despesa;
+    this.currentIndex = index;
   }
 
   // listaDespesas() {
@@ -45,9 +78,9 @@ export class ExtratoComponent implements OnInit {
   //   );
   // }
 
-  onClickItem(t: Despesa) {
-    this.router.navigate(['/extrato/detalhes', t?.id]);
-    // this.router.navigate(['/extrato/detalhes/', { id: t?.id }]);
-  }
+  // onClickItem(t: Despesa) {
+  //   this.router.navigate(['/extrato/detalhes', t?.id]);
+  //   // this.router.navigate(['/extrato/detalhes/', { id: t?.id }]);
+  // }
 
 }

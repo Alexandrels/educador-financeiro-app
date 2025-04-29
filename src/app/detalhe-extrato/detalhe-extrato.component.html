@@ -5,24 +5,24 @@
   <div class="row">
     <ul class="collection col s12 offset-m3 m6 lista-preta">
       <li class="collection-item lista-preta">
-        <span class="badge left white-text">IDENTIFICADOR</span>{{ this.transacao.id }}
+        <span class="badge left white-text">IDENTIFICADOR</span>{{ this.despesaAtual.id }}
       </li>
       <li class="collection-item lista-preta">
         <span class="badge left white-text">VALOR</span
-        >{{ this.transacao.valor | currency : "BRL" }}
+        >{{ this.despesaAtual.valor | currency : "BRL" }}
       </li>
       <li class="collection-item lista-preta">
         <span class="badge left white-text">DESCRICAO</span
-        >{{ this.transacao.descricao | uppercase }}
+        >{{ this.despesaAtual.descricao | uppercase }}
       </li>
 
       <li class="collection-item lista-preta">
         <span class="badge left white-text">Despesa</span
-        >{{ this.transacao.tipoDespesaId| uppercase }}
+        >{{ this.despesaAtual.tipoDespesaId| uppercase }}
       </li>
       <li class="collection-item lista-preta">
         <span class="badge left white-text">DATA</span>
-        {{ this.transacao.dataLancamento | date : "dd/MM/yyyy" }}
+        {{ this.despesaAtual.dataLancamento | date : "dd/MM/yyyy" }}
       </li>
     </ul>
   </div>
