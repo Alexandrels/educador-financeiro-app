@@ -8,7 +8,7 @@ import { CadastroFonteRendaComponent } from './cadastro-fonte-renda/cadastro-fon
 import { VisaoFonteRendaComponent } from './visao-fonte-renda/visao-fonte-renda.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, registerLocaleData } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -34,7 +34,9 @@ import { CadastroTipoDespesaComponent } from './cadastro-tipo-despesa/cadastro-t
 import { DetalheTipoDespesaComponent } from './detalhe-tipo-despesa/detalhe-tipo-despesa.component';
 import { ListarTipoDespesaComponent } from './listar-tipo-despesa/listar-tipo-despesa.component';
 import { DespesaDetalheComponent } from './despesa-detalhe/despesa-detalhe.component';
-import { DespesaListComponent } from './despesa-list/despesa-list.component';
+import { DespesaListComponent } from './components/despesa-list/despesa-list.component';
+import { DespesaFormComponent } from './components/despesa-form/despesa-form.component';
+import { DespesaPageComponent } from './components/despesa-page/despesa-page.component';
 
 registerLocaleData(ptBr);
 
@@ -64,7 +66,9 @@ registerLocaleData(ptBr);
     DetalheTipoDespesaComponent,
     ListarTipoDespesaComponent,
     DespesaDetalheComponent,
-    DespesaListComponent
+    DespesaListComponent,
+    DespesaFormComponent,
+    DespesaPageComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +77,7 @@ registerLocaleData(ptBr);
     CommonModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxMaskModule.forRoot(),
     
   ],

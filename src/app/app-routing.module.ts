@@ -13,6 +13,7 @@ import { DetalheExtratoComponent } from './detalhe-extrato/detalhe-extrato.compo
 import { CadastroFonteRendaListComponent } from './cadastro-fonte-renda-list/cadastro-fonte-renda-list.component';
 import { CadastroTipoDespesaComponent } from './cadastro-tipo-despesa/cadastro-tipo-despesa.component';
 import { ListarTipoDespesaComponent } from './listar-tipo-despesa/listar-tipo-despesa.component';
+import { DespesaPageComponent } from './components/despesa-page/despesa-page.component';
 
 const routes: Routes = [
   { path: 'inicio', component: LandPageComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'visualizar-fontes-renda', component: VisualizarFontesRendaComponent },
   { path: 'cad-tipo-despesa', component: CadastroTipoDespesaComponent },
   { path: 'listar-tipo-despesa', component: ListarTipoDespesaComponent },
+  { path: 'despesa-page', component: DespesaPageComponent },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
 ];
 

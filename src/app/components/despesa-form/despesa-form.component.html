@@ -1,0 +1,12 @@
+<form [formGroup]="despesaForm" (ngSubmit)="onSubmit()">
+    <input formControlName="descricao" placeholder="Descrição" />
+    <input formControlName="valor" type="number" placeholder="Valor (R$)" />
+    <select formControlName="tipo">
+      <option value="">Selecione o tipo</option>
+      <option value="Alimentação">Alimentação</option>
+      <option value="Transporte">Transporte</option>
+      <option value="Outros">Outros</option>
+    </select>
+    <input formControlName="data" type="date" />
+    <button type="submit">{{ selectedExpense ? 'Atualizar' : 'Adicionar' }}</button>
+  </form>

@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="let expense of despesas$ | async">
+      {{ expense.descricao }} - R$ {{ expense.valor }} - {{ expense.tipoDespesa?.descricao }} - {{ expense.dataLancamento }}
+      <button (click)="onEdit(expense)">Editar</button>
+      <button (click)="onDelete(expense.id!)">Excluir</button>
+    </li>
+  </ul>

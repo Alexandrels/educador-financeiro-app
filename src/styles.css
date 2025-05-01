@@ -23,3 +23,8 @@
 ::ng-deep select option {
   color: black !important;
 }
+
+input, select {
+  color: white;
+  background-color: #222;
+}
