@@ -1,3 +1,4 @@
+import { Timestamp } from "@firebase/firestore";
 import { TipoDespesa } from "./tipo-despesa";
 
 
@@ -7,7 +8,7 @@ export class Despesa{
     userId?: string;
     valor?: number;
     descricao?:string;
-    dataLancamento?: Date = new Date();
+    dataLancamento?: Timestamp;
     tipoDespesaId?:string;
     tipoDespesa?:TipoDespesa;
     published?: boolean;

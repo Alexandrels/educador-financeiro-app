@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TipoDespesa } from '../model/tipo-despesa';
 import { Despesa } from '../model/despesa';
 import { TipoDespesaService } from '../service/tipo-despesa.service';
+import { Timestamp } from '@firebase/firestore';
 
 @Component({
   selector: 'app-detalhe-extrato',
@@ -22,7 +23,7 @@ export class DetalheExtratoComponent implements OnInit{
     userId: '',
     valor: 0,
     descricao:'',
-    dataLancamento: new Date(),
+    dataLancamento: Timestamp.now(),
     tipoDespesaId:'',
     published: false
   };
@@ -84,31 +85,5 @@ export class DetalheExtratoComponent implements OnInit{
     }
   }
 
-  // carregarDetalheExtrao(id: number){
-    // this.despesaService.getById(id).subscribe(
-    //   (data: Despesa) =>{
-    //     if (!data ) {
-    //       alert('Nenhum resultado foi encontrado!');
-    //     }
-    //     this.transacao = data;
-    //     this.tipoDespesaService.getById(data.tipoDespesaId).subscribe(
-    //       (tipo: TipoDespesa)=>{
-    //         if (tipo ) {
-    //           this.transacao.tipoDespesaId = tipo.descricao;
-    //         }
-    //       },
-    //       (error)=>{
-    //         console.log('nao conseguiu desc tipo despesa');
-    //         console.log(error);
-    //       }
-    //     )
-    //   },
-    //   (error) => {
-    //     console.log('componente');
-    //     console.log(error);
-    //     alert(error.message);
-    //   }
-    // );
-  // }
 
 }

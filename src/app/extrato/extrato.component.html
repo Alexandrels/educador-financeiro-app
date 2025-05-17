@@ -1,34 +1,43 @@
-<div class="container contact white-text">
-    <h4 class="grey-text text-lighten-5">Extrato</h4>
+<div class="list row white-text">
+  <div class="col-md-6">
+    <h4 class="white-text">Lista de Despesas</h4>
 
-    <div class="row">
-      <div class="col s12 m6 offset-m3">
-        <table>
-          <thead>
-            <tr>
-              <th data-field="td-date">Data</th>
-              <th data-field="td-desc">Descricao</th>
-              <th data-field="td-type">Despesa</th>
-              <th data-field="td-value">Valor</th>
-            </tr>
-          </thead>
-  
-          <tbody>
-            <tr *ngFor="let t of this.despesaList; let i = index"
-            [class.active]="i == currentIndex"
-            (click)="setActiveTutorial(t, i)">
-              <td>{{ t.dataLancamento | date: "dd/MM/yyyy HH:mm:ss" }}</td>
-              <td>{{ t.descricao | uppercase}}</td>
-              <td>{{ t.tipoDespesaId| uppercase }}</td>
-              <td>{{ t.valor | currency: "BRL" }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <table class="table table-dark table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>VALOR</th>
+          <th>DESCRIÇÃO</th>
+          <th>TIPO DESPESA</th>
+          <th>DATA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let despesa of despesaList; let i = index"
+          [class.table-active]="i == currentIndex"
+          (click)="setActiveTutorial(despesa, i)"
+          style="cursor: pointer"
+        >
+          <td>{{ despesa.valor | currency: 'BRL' }}</td>
+          <td>{{ despesa.descricao }}</td>
+          <td>{{ despesa.tipoDespesa?.descricao }}</td>
+          <td>{{ despesa.dataLancamento?.toDate() | date: 'dd/MM/yyyy' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-6">
+    <div *ngIf="despesaAtual">
+      <app-detalhe-extrato
+        (refreshList)="refreshList()"
+        [despesa]="despesaAtual"
+      ></app-detalhe-extrato>
     </div>
-    <div *ngIf="!despesaAtual">
+
+    <div *ngIf="!despesaAtual" class="white-text">
       <br />
       <p>Por favor clique em uma despesa...</p>
+    </div>
   </div>
-  </div>
-  
+</div>

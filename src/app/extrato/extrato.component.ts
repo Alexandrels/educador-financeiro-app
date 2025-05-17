@@ -21,12 +21,6 @@ export class ExtratoComponent implements OnInit {
   currentIndex = -1;
   title = '';
 
-  // constructor(
-  //   private router: Router,
-  //   private despesaService: DespesaPromisseService,
-  //   private tipoDespesaPromisseService: TipoDespesaPromisseService
-  // ) {}
-
   constructor(private despesaService: DespesaService) { }
 
   ngOnInit(): void {
