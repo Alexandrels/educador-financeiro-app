@@ -22,7 +22,7 @@
       </li>
       <li class="collection-item lista-preta">
         <span class="badge left white-text">DATA</span>
-        {{ this.despesaAtual.dataLancamento | date : "dd/MM/yyyy" }}
+        {{ this.despesaAtual.dataLancamento?.toDate()| date : "dd/MM/yyyy" }}
       </li>
     </ul>
   </div>
